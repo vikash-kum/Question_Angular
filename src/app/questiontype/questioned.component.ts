@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-questiontype',
@@ -8,18 +7,14 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class QuestionedComponent implements OnInit {
 
-  objects : any;
-  private link: string | null = "";
+  objects = [{title : "Core" , link : "core/questions"} ,
+    {title: "opps" , link: "opps/questions"} ,
+    {title: "arrays" , link:"array/questions"}];
 
-  constructor(private activatedRoute: ActivatedRoute) {
-
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.link = this.activatedRoute.snapshot.paramMap.get('subject');
-
-    this.objects = [{title : "Core" , link : this.link+ "/core"} ,
-      {title: "opps" , link: this.link+"/opps"} ,
-      {title: "arrays" , link: this.link+"/arrays"}];
   }
 }
+

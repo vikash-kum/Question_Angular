@@ -3,9 +3,6 @@
     <img  (click)="questiontype(fromparent.link)" src={{fromparent.image}} class="card-img-top rounded mx-auto d-block pb-1" >
   </div>
     <div class="card-body text-center">
-      <h5 *ngIf="fromparent.title" (click)="questiontype(fromparent.link)">{{fromparent.title}}</h5>
-<!--      <div class="card-footer">-->
-<!--        <small class="text-muted">Last updated 3 mins ago</small>-->
-<!--      </div>-->
+      <a *ngIf="fromparent.title" routerLink= {{fromparent.link}}>{{fromparent.title}}</a>
     </div>
   </div>

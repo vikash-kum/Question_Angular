@@ -6,18 +6,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CardComponent } from './card/card.component';
 import { LeftsidebarComponent } from './leftsidebar/leftsidebar.component';
 import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
-import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
 import { HomeComponent } from './home/home.component';
 import { QuestionedComponent } from './questiontype/questioned.component';
 import { QuestionsComponent } from './questiontype/questions/questions.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminLeftComponent } from './admin/admin-left/admin-left.component';
+import {AppRoutingModule} from './app-routing.module';
 
-const appRoutes : Routes = [
-  { path: ''  , component: HomeComponent },
-  { path: ':subject'  , component: QuestionedComponent },
-  { path: ':subject/:section'  , component: QuestionsComponent },
-  { path: '**'  , component: ErrorComponent }
-];
+// const appRoutes : Routes = [
+//   { path: ''  , component: HomeComponent },
+//   { path: 'admin'  , component: AdminComponent },
+//   { path: ':subject'  , component: QuestionedComponent },
+//   { path: ':subject/:section'  , component: QuestionsComponent },
+//   { path: '**'  , component: ErrorComponent }
+// ];
 
 @NgModule({
   declarations: [
@@ -29,12 +32,14 @@ const appRoutes : Routes = [
     ErrorComponent,
     HomeComponent,
     QuestionedComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    AdminComponent,
+    AdminLeftComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

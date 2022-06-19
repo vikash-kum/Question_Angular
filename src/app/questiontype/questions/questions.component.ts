@@ -39,7 +39,8 @@ export class QuestionsComponent implements OnInit {
     answer : "hello",
     givenAnswer : false
   }
-  questions = [this.ob1  , this.ob2, this.ob3];
+  questions = [this.ob1  , this.ob2, this.ob3,this.ob1  , this.ob2, this.ob3,this.ob1  , this.ob2, this.ob3
+  ,this.ob1  , this.ob2, this.ob3,this.ob1  , this.ob2, this.ob3,this.ob1  , this.ob2, this.ob3];
 
   constructor() { }
 
