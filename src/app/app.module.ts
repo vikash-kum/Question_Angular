@@ -1,45 +1,72 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './component/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CardComponent } from './card/card.component';
-import { LeftsidebarComponent } from './leftsidebar/leftsidebar.component';
-import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
-import { ErrorComponent } from './error/error.component';
-import { HomeComponent } from './home/home.component';
-import { QuestionedComponent } from './questiontype/questioned.component';
-import { QuestionsComponent } from './questiontype/questions/questions.component';
-import { AdminComponent } from './admin/admin.component';
+import { LeftsidebarComponent } from './component/leftsidebar/leftsidebar.component';
+import { RightsidebarComponent } from './component/rightsidebar/rightsidebar.component';
+import { ErrorComponent } from './page/error/error.component';
+import { HomeComponent } from './page/home/home.component';
+import { QuestionComponent } from './page/subject/question/question.component';
 import { AdminLeftComponent } from './admin/admin-left/admin-left.component';
 import {AppRoutingModule} from './app-routing.module';
-
-// const appRoutes : Routes = [
-//   { path: ''  , component: HomeComponent },
-//   { path: 'admin'  , component: AdminComponent },
-//   { path: ':subject'  , component: QuestionedComponent },
-//   { path: ':subject/:section'  , component: QuestionsComponent },
-//   { path: '**'  , component: ErrorComponent }
-// ];
+import {HttpClientModule} from "@angular/common/http";
+import { AddQuestionComponent } from './admin/add-question/add-question.component';
+import { AddTopicComponent } from './admin/add-topic/add-topic.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import  { MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
+import { AboutComponent } from './page/about/about.component';
+import { SubjectComponent } from './page/subject/subject.component';
+import { HeaderComponent } from './component/header/header.component';
+import { OppsComponent } from './java/opps/opps.component';
+import { DatatypeComponent } from './java/datatype/datatype.component';
+import { JavaComponent } from './java/java.component';
+import { CppComponent } from './cpp/cpp.component';
+import { PythonComponent } from './python/python.component';
+import { NetworkingComponent } from './networking/networking.component';
+import { OperatingSystemComponent } from './operating-system/operating-system.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    CardComponent,
     LeftsidebarComponent,
     RightsidebarComponent,
     ErrorComponent,
     HomeComponent,
-    QuestionedComponent,
-    QuestionsComponent,
-    AdminComponent,
-    AdminLeftComponent
+    QuestionComponent,
+    AdminLeftComponent,
+    AddQuestionComponent,
+    AddTopicComponent,
+    AdminDashboardComponent,
+    AboutComponent,
+    SubjectComponent,
+    QuestionComponent,
+    HeaderComponent,
+    OppsComponent,
+    DatatypeComponent,
+    JavaComponent,
+    CppComponent,
+    PythonComponent,
+    NetworkingComponent,
+    OperatingSystemComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

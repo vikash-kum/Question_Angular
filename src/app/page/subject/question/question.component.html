@@ -1,0 +1,32 @@
+
+<div class="container mainContainer px-0 mx-0">
+  <div class="row gx-5 position-fixed">
+    <app-leftsidebar ></app-leftsidebar>
+  </div>
+
+<div  class="container mt-4" style="padding-left : 25%;">
+  <div class="bg-light text-dark"  *ngFor = "let q of questions; let i = index" >
+  <div class="ms-3">
+      <p><p>Q{{i + 1}}) <span [innerHTML] ="q.content"></span></p>
+  </div>
+    <div class="row gx-0 px-4">
+      <div class="form-check col-md-6">
+        <p><input class="form-check-input" (click)="ans(i, q.option1)" type="radio" [value] = "q.option1" [name] = "i + 'a'"> {{q.option1}}</p>
+      </div>
+      <div class="form-check col-md-4">
+        <p><input class="form-check-input" (click)="ans(i, q.option2)" type="radio" [value] = "q.option2" [name] = "i + 'a'"> {{q.option2}}</p>
+      </div>
+      <div class="form-check col-md-6">
+        <p><input class="form-check-input" (click)="ans(i, q.option3)" type="radio" [value] = "q.option3" [name] = "i + 'a'"> {{q.option3}}</p>
+      </div>
+      <div class="form-check col-md-4">
+        <p><input class="form-check-input" (click)="ans(i, q.option4)" type="radio" [value] = "q.option4" [name] = "i + 'a'"> {{q.option4}}</p>
+      </div>
+    </div>
+    <div>
+      <label class="text-success ps-5 fw-bold" *ngIf="q.givenAnswer">Correct Ans -> {{q.answer | uppercase}}</label>
+    </div>
+  </div>
+</div>
+
+</div>

@@ -1,9 +1,17 @@
 import {RouterModule, Routes} from "@angular/router";
-import {ErrorComponent} from "./error/error.component";
-import {HomeComponent} from "./home/home.component";
-import {QuestionedComponent} from "./questiontype/questioned.component";
+import {ErrorComponent} from "./page/error/error.component";
+import {HomeComponent} from "./page/home/home.component";
 import {NgModule} from "@angular/core";
-import {QuestionsComponent} from "./questiontype/questions/questions.component";
+import {QuestionComponent} from "./page/subject/question/question.component";
+import {AddQuestionComponent} from "./admin/add-question/add-question.component";
+import {AddTopicComponent} from "./admin/add-topic/add-topic.component";
+import {AdminDashboardComponent} from "./admin/admin-dashboard/admin-dashboard.component";
+import {AboutComponent} from "./page/about/about.component";
+import {SubjectComponent} from "./page/subject/subject.component";
+import {JavaComponent} from "./java/java.component";
+import {CppComponent} from "./cpp/cpp.component";
+import {PythonComponent} from "./python/python.component";
+import {NetworkingComponent} from "./networking/networking.component";
 
 
 const routes: Routes = [
@@ -11,119 +19,69 @@ const routes: Routes = [
   {
     path: '', component: HomeComponent
   },
+
+  {
+    path: 'about', component: AboutComponent
+  },
+
+  {
+    path: "admin",
+    children: [
+      {path: "", component: AdminDashboardComponent},
+      {path: "addquestion", component: AddQuestionComponent},
+      {path: "addtopic", component: AddTopicComponent}
+    ]
+  },
+
   {
     path: 'java' ,
     children :[
-      {path: '' , component : QuestionedComponent },
-      {path: 'core/questions'  , component: QuestionsComponent},
-      {path: 'opps/questions'  , component: QuestionsComponent},
-      {path: 'array/questions'  , component: QuestionsComponent}
+      {path: '' , component : JavaComponent },
+      {path: ':subject/questions'  , component: QuestionComponent},
     ]
   },
 
   {
     path: 'cpp' ,
     children :[
-      {path: '' , component : QuestionedComponent },
-      {path: 'core/questions'  , component: QuestionsComponent},
-      {path: 'opps/questions'  , component: QuestionsComponent},
-      {path: 'array/questions'  , component: QuestionsComponent}
+      {path: '' , component : CppComponent },
+      {path: ':subject/questions'  , component: QuestionComponent}
     ]
   },
   {
     path: 'python' ,
     children :[
-      {path: '' , component : QuestionedComponent },
-      {path: 'core/questions'  , component: QuestionsComponent},
-      {path: 'opps/questions'  , component: QuestionsComponent},
-      {path: 'array/questions'  , component: QuestionsComponent}
+      {path: '' , component : PythonComponent },
+      {path: ':subject/questions'  , component: QuestionComponent}
     ]
   },
   {
     path: 'dbms' ,
     children :[
-      {path: '' , component : QuestionedComponent },
-      {path: 'core/questions'  , component: QuestionsComponent},
-      {path: 'opps/questions'  , component: QuestionsComponent},
-      {path: 'array/questions'  , component: QuestionsComponent}
+      {path: '' , component : SubjectComponent },
+      {path: ':subject/questions'  , component: QuestionComponent}
     ]
   },
   {
     path: 'networking' ,
     children :[
-      {path: '' , component : QuestionedComponent },
-      {path: 'core/questions'  , component: QuestionsComponent},
-      {path: 'opps/questions'  , component: QuestionsComponent},
-      {path: 'array/questions'  , component: QuestionsComponent}
+      {path: '' , component : NetworkingComponent },
+      {path: ':subject/questions'  , component: QuestionComponent}
     ]
   },
+
   {
     path: 'operating-system' ,
     children :[
-      {path: '' , component : QuestionedComponent },
-      {path: 'core/questions'  , component: QuestionsComponent},
-      {path: 'opps/questions'  , component: QuestionsComponent},
-      {path: 'array/questions'  , component: QuestionsComponent}
+      {path: '' , component : SubjectComponent },
+      {path: ':subject/questions'  , component: QuestionComponent}
     ]
   },
 
   {
-      path: "admin",
-      component: HomeComponent
-      // pathMatch: 'full',
-
-      //   children : [
-      //     {
-      //       path : '',
-      //       component : WelcomeComponent,
-      //     },
-      //     {
-      //       path : 'profile',
-      //       component : ProfileComponent,
-      //     },
-      //     {
-      //       path : 'view-categories',
-      //       component : ViewCategoriesComponent,
-      //     },
-      //     {
-      //       path : 'add-category',
-      //       component : AddCategoryComponent,
-      //     },
-      //     {
-      //       path : 'view-quizzes',
-      //       component : ViewQuizzesComponent,
-      //     },
-      //     {
-      //       path : 'add-quiz',
-      //       component : AddQuizComponent,
-      //     },
-      //     {
-      //       path : 'quiz/:qId',
-      //       component : UpdateQuizComponent,
-      //     },
-      //     {
-      //       path : 'view-questions/:qId/:title',
-      //       component : ViewQuizQuestionsComponent,
-      //     },
-      //     {
-      //       path : "add-questions/:qId/:title",
-      //       component : AddQuestionsComponent,
-      //     },
-      //     {
-      //       path : "update-question/:quesId",
-      //       component : UpdateQuestionComponent,
-      //     },
-      //     {
-      //       path : "update-category/:cid",
-      //       component : UpdateCategoryComponent,
-      //     }
-      //   ]
-    } ,
-    {
-      path: "**",
-      component: ErrorComponent,
-    },
-  ];
+      path: "**", component: ErrorComponent,
+  },
+];
 
 
 @NgModule({
